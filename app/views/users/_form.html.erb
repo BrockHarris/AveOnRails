@@ -1,0 +1,21 @@
+<%= form_for @user, :html=> { :multipart => true} do |f| %>
+<%= render "shared/error_messages", :target => @user %>
+
+<p>
+  <%= f.label :username %><br />
+  <%= f.text_field :username %>
+</p>
+<p>
+  <%= f.label :email %><br />
+  <%= f.text_field :email %>
+</p>
+<p>
+  <%= f.label :password, f.object.new_record? ? nil : "Change password" %><br />
+  <%= f.password_field :password %>
+</p>
+<p>
+  <%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %>
+</p>
+ <%= f.submit "Register" %>
+<% end %>

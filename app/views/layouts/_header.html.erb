@@ -1,0 +1,17 @@
+<div class="header">
+	<!--div class="header_container"></div-->
+	<%= link_to "THE AVE", root_path, :class=>"header_logo" %>
+	
+	<% if current_user %>
+		<span><%= link_to "Sign out", logout_path, :class=>"header_links" %></span>
+		<span><%= link_to 'Settings', settings_path, :class=>"header_links" %></span>
+		<span><%= link_to "Profile", current_user, :class=>"header_links" %></span>
+		<span><%= link_to "Upload", upload_path, :class=>"header_links" %></span>
+		<span><%= link_to "Projects", projects_path, :class=>"header_links" %></span>
+		<span><%= link_to "Designers", designers_path, :class=>"header_links" %></span>
+	<% else %>
+		<span><%= link_to "Signup", signup_path, :class=>"header_links" %></span>
+		<span><%= link_to "Signin", login_path, :class=>"header_links" %></span>
+	<% end %>
+
+</div>

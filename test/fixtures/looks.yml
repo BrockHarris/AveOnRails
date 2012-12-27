@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  description: MyString
+  collection_id: 1
+  title: MyString
+  photo_file_name: MyString
+  photo_file_size: 1
+
+two:
+  description: MyString
+  collection_id: 1
+  title: MyString
+  photo_file_name: MyString
+  photo_file_size: 1

@@ -1,0 +1,10 @@
+<strong><%= @collection.title %><br />
+<%= @collection.description %><br /></strong>
+Created on: <%= @collection.created_at %>
+
+<% @looks.each do |look| %>
+
+	<%= image_tag look.photo.url(:large) %>
+  <%= link_to look.title, look %>
+  
+<% end %>

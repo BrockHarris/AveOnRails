@@ -1,0 +1,18 @@
+<%= form_for @collection, :html=> { :multipart => true} do |f| %>
+  <%= render "shared/error_messages", :target => @collection %>
+  <p>
+    <%= f.label "Collection Title" %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label "Description" %><br />
+    <%= f.text_field :description %>
+  </p>
+  <% f.hidden_field :user_id, :value => current_user.id %>
+
+  <%= f.fields_for :looks do |builder| %>
+    <%= render "look_fields", :f => builder %>
+  <% end %>
+  <p><%= link_to_add_fields "add another photo", f, :looks %></p>
+  <p><%= f.submit "Submit" %></p>
+<% end %>

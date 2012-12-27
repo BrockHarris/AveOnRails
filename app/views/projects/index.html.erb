@@ -1,0 +1,14 @@
+<% unless @projects.empty? %>
+<% @projects.each do |project| %>
+  <li>
+  	<%= link_to project.title, project %>
+  	<%= project.project_type %>
+	</li>
+<% end %>
+<% else %>
+There are no open projects at this time.
+<% end %>
+
+<%# if current_user.vip? %>
+	<%= link_to "Post a Project", new_project_path %>
+<%# end %>

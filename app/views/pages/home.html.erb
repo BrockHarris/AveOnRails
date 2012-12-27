@@ -1,0 +1,5 @@
+<% if current_user %>
+	<%= render "pages/auth_home" %>
+<% else %>
+	<%= render "pages/unauth_home" %>
+<% end %>

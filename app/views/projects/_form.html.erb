@@ -1,0 +1,57 @@
+<%= form_for @project, :html=> { :multipart => true} do |f| %>
+  <%= render "shared/error_messages", :target => @project %>
+   <% f.hidden_field :user_id, :value => current_user.id %>
+  <p>
+    <%= f.label "What type of project are you posting?" %><br />
+    <%= f.select :project_type, ["Commercial","Editorial","Red Carpet","Television","Theatre","Movie","Music Video","Public Work","Other"] %>
+  </p>
+  <p>
+    <%= f.label "Who is the client?" %><br />
+    <%= f.text_field :client %>
+  </p>
+  <p>
+    <%= f.label "Project Title" %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label "When do you need these pieces by?" %><br />
+    <%= f.datepicker "deadline" %> 
+  </p>
+  <p>
+    <%= f.label "When will you return these pieces by?" %><br />
+    <%= f.datepicker "return_by" %> 
+  </p>
+  <p>
+    <%= f.label "What is the look or inspiration for this shoot?*" %><br />
+    <%= f.text_area :concept %>
+  </p>
+  <strong>Handling - where you want pieces sent/delivered</strong> <br/>
+  <p>
+    <%= f.label "How would you prefer getting the pulled pieces?" %><br />
+    <%= f.select :delivery_method, ["Mail","In Person Pickup","In Person Delivery","Schedule Meeting"] %>
+  </p>
+  <p>
+    <%= f.label "Street Address" %><br />
+    <%= f.text_field :street %>
+  </p>
+  <p>
+    <%= f.label "Apt/Suite" %><br />
+    <%= f.text_field :suite %>
+  </p>
+  <p>
+    <%= f.label "City" %><br />
+    <%= f.text_field :city %>
+  </p>
+  <p>
+    <%= f.label "State" %><br />    
+    <%= f.select :state, us_states %>
+  </p>
+  <p>
+    <%= f.label "Zip" %><br />
+    <%= f.text_field :zip %>
+  </p>
+  <strong>Legal</strong>
+  !add upload for legal contract.
+ 
+  <p><%= f.submit "Post" %></p>
+<% end %>

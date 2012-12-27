@@ -1,0 +1,10 @@
+<strong><%= @submission.title %><br />
+<%= @submission.description %><br /></strong>
+Created on: <%= @submission.created_at %>
+
+<% @attachments.each do |attachment| %>
+
+	<%= image_tag attachment.photo.url(:large) %>
+  <%= link_to attachment.title, attachment %>
+  
+<% end %>
